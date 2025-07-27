@@ -7,15 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "claude-flow:init": "node scripts/init-claude-flow.js",
-    "claude-flow:swarm": "node scripts/claude-flow-swarm.js",
-    "claude-flow:hive": "node scripts/claude-flow-hive.js",
-    "agent-server": "node mi-agencia-ia/src/simple-server.js",
-    "agent-server:full": "node mi-agencia-ia/src/server.js",
-    "dev:all": "concurrently \"npm run dev\" \"npm run agent-server\"",
-    "status": "node scripts/status.js",
-    "init-memory": "node scripts/init-sqlite.js",
-    "check-memory": "node scripts/init-sqlite.js"
+    "type-check": "tsc --noEmit",
   },
   "dependencies": {
     "next": "14.1.0",
