@@ -1,0 +1,174 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Task Schema v1.0",
+  "type": "object",
+  "required": ["taskId", "projectId", "status", "requesterAgent", "targetAgent", "input", "createdAt"],
+  "properties": {
+    "taskId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID único para la tarea"
+    },
+    "projectId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID del proyecto/cliente global"
+    },
+    "parentTaskId": {
+      "type": ["string", "null"],
+      "format": "uuid",
+      "description": "ID de la tarea padre si es subtarea"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "queued", "in_progress", "needs_validation", "completed", "failed", "cancelled"],
+      "description": "Estado actual de la tarea"
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10,
+      "default": 5,
+      "description": "Prioridad de ejecución (1=baja, 10=crítica)"
+    },
+    "requesterAgent": {
+      "type": "string",
+      "enum": ["human", "ceo_agent", "team_leader_agent", "critical_agent", "system"],
+      "description": "Quién solicitó la tarea"
+    },
+    "targetAgent": {
+      "type": "string",
+      "enum": [
+        "content_creator",
+        "web_dev_agent",
+        "campaign_manager_agent",
+        "analytics_agent",
+        "crm_agent",
+        "social_media_agent",
+        "email_sms_agent",
+        "strategy_agent",
+        "competitor_agent",
+        "team_leader_agent",
+        "ceo_agent",
+        "critical_agent"
+      ],
+      "description": "Agente asignado para ejecutar"
+    },
+    "input": {
+      "type": "object",
+      "required": ["prompt"],
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "Instrucción principal para el agente"
+        },
+        "context": {
+          "type": "object",
+          "properties": {
+            "buyerPersona": { "type": "object" },
+            "brandGuide": {
+              "type": "object",
+              "properties": {
+                "colors": { "type": "array", "items": { "type": "string" } },
+                "voice": { "type": "string", "enum": ["formal", "casual", "professional", "friendly"] },
+                "values": { "type": "array", "items": { "type": "string" } }
+              }
+            },
+            "previousTasksOutput": { "type": "array", "items": { "type": "object" } },
+            "constraints": { "type": "object" }
+          }
+        },
+        "data": {
+          "type": ["object", "array", "null"],
+          "description": "Datos adicionales necesarios"
+        },
+        "maxBudget": {
+          "type": "object",
+          "properties": {
+            "tokens": { "type": "integer" },
+            "apiCalls": { "type": "integer" },
+            "timeSeconds": { "type": "integer" }
+          }
+        }
+      }
+    },
+    "output": {
+      "type": ["object", "null"],
+      "properties": {
+        "data": {
+          "type": ["object", "array", "string", "null"],
+          "description": "Resultado principal de la tarea"
+        },
+        "explanation": {
+          "type": "string",
+          "description": "Razonamiento detrás de las decisiones"
+        },
+        "confidenceScore": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confianza del agente en su output (0-1)"
+        },
+        "alternativeSolutions": {
+          "type": "array",
+          "items": { "type": "object" },
+          "description": "Otras opciones consideradas"
+        },
+        "warnings": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Advertencias o consideraciones"
+        }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "properties": {
+        "startTime": { "type": "string", "format": "date-time" },
+        "endTime": { "type": "string", "format": "date-time" },
+        "duration": { "type": "integer", "description": "Duración en segundos" },
+        "modelUsed": { "type": "string" },
+        "tokensConsumed": { "type": "integer" },
+        "cost": { "type": "number", "description": "Costo en USD" },
+        "retryCount": { "type": "integer", "default": 0 }
+      }
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["timestamp", "agent", "action"],
+        "properties": {
+          "timestamp": { "type": "string", "format": "date-time" },
+          "agent": { "type": "string" },
+          "action": { "type": "string" },
+          "details": { "type": "object" },
+          "snapshot": { "type": "object", "description": "Estado del task en ese momento" }
+        }
+      }
+    },
+    "humanFeedback": {
+      "type": ["object", "null"],
+      "properties": {
+        "wasApproved": { "type": "boolean" },
+        "correction": { "type": "string" },
+        "rating": { "type": "integer", "minimum": 1, "maximum": 5 },
+        "reviewerId": { "type": "string" },
+        "reviewTime": { "type": "string", "format": "date-time" },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "version": { "type": "string", "default": "1.0" },
+        "environment": { "type": "string", "enum": ["development", "staging", "production"] },
+        "tenantId": { "type": "string" },
+        "billingCategory": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  }
+}

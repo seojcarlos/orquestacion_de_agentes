@@ -1,0 +1,47 @@
+{
+  "name": "orquestacion-de-agentes",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "claude-flow:init": "node scripts/init-claude-flow.js",
+    "claude-flow:swarm": "node scripts/claude-flow-swarm.js",
+    "claude-flow:hive": "node scripts/claude-flow-hive.js",
+    "agent-server": "node mi-agencia-ia/src/simple-server.js",
+    "agent-server:full": "node mi-agencia-ia/src/server.js",
+    "dev:all": "concurrently \"npm run dev\" \"npm run agent-server\"",
+    "status": "node scripts/status.js",
+    "init-memory": "node scripts/init-sqlite.js",
+    "check-memory": "node scripts/init-sqlite.js"
+  },
+  "dependencies": {
+    "next": "14.1.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "@supabase/supabase-js": "^2.39.3",
+    "@supabase/auth-helpers-nextjs": "^0.8.7",
+    "lucide-react": "^0.314.0",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5",
+    "socket.io-client": "^4.7.2",
+    "axios": "^1.6.5",
+    "sqlite3": "^5.1.7",
+    "better-sqlite3": "^9.3.0",
+    "events": "^3.3.0",
+    "framer-motion": "^10.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "concurrently": "^8.2.2",
+    "@types/better-sqlite3": "^7.6.9"
+  }
+}
