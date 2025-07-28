@@ -188,40 +188,43 @@ docker-compose.override.yml
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white p-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-slate-50">
+      <div className="max-w-6xl mx-auto p-6">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <Shield className="h-12 w-12 text-green-400" />
-            <h1 className="text-5xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
-              .gitignore Correcto
-            </h1>
+        <header className="bg-white shadow-sm border-b border-slate-200 rounded-lg mb-8">
+          <div className="px-6 py-8">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <Shield className="h-12 w-12 text-green-500" />
+              <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent leading-tight">
+                .gitignore Correcto
+              </h1>
+            </div>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto text-center leading-relaxed">
+              Tutorial completo para proteger tu código y datos sensibles. 
+              <span className="text-red-500 font-semibold"> ¡Evita subir .env y datos personales a GitHub!</span>
+            </p>
           </div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Tutorial completo para proteger tu código y datos sensibles. 
-            <span className="text-red-400 font-semibold"> ¡Evita subir .env y datos personales a GitHub!</span>
-          </p>
-        </div>
+        </header>
 
+        <div className="space-y-8">
         {/* Problema Actual */}
-        <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-6 mb-8">
+        <div className="bg-red-50 border border-red-200 rounded-xl p-6">
           <div className="flex items-center gap-3 mb-4">
-            <AlertTriangle className="h-6 w-6 text-red-400" />
-            <h2 className="text-2xl font-bold text-red-400">🚨 Problema Detectado en tu Proyecto</h2>
+            <AlertTriangle className="h-6 w-6 text-red-500" />
+            <h2 className="text-2xl font-bold text-red-600">🚨 Problema Detectado en tu Proyecto</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <h3 className="font-semibold text-red-300 mb-2">Lo que está pasando:</h3>
-              <ul className="space-y-1 text-red-200">
-                <li>• Tienes un archivo <code className="bg-red-500/20 px-2 py-1 rounded">.env</code></li>
+              <h3 className="font-semibold text-red-700 mb-2">Lo que está pasando:</h3>
+              <ul className="space-y-1 text-red-600">
+                <li>• Tienes un archivo <code className="bg-red-100 px-2 py-1 rounded">.env</code></li>
                 <li>• Puede contener datos sensibles</li>
                 <li>• Podría subirse a GitHub accidentalmente</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold text-green-300 mb-2">✅ Buenas noticias:</h3>
-              <ul className="space-y-1 text-green-200">
+              <h3 className="font-semibold text-green-700 mb-2">✅ Buenas noticias:</h3>
+              <ul className="space-y-1 text-green-600">
                 <li>• Tu .env NO está siendo rastreado por Git</li>
                 <li>• Tu .gitignore funciona correctamente</li>
                 <li>• Solo necesitas mejorarlo</li>
@@ -231,30 +234,30 @@ docker-compose.override.yml
         </div>
 
         {/* ¿Qué es .gitignore? */}
-        <div className="bg-slate-800/50 rounded-xl p-6 mb-8">
+        <div className="bg-white rounded-xl shadow-md p-6">
           <div className="flex items-center gap-3 mb-4">
-            <EyeOff className="h-6 w-6 text-blue-400" />
-            <h2 className="text-2xl font-bold">¿Qué es .gitignore?</h2>
+            <EyeOff className="h-6 w-6 text-blue-500" />
+            <h2 className="text-2xl font-bold text-gray-800">¿Qué es .gitignore?</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-              <FileText className="h-8 w-8 text-blue-400 mb-3" />
-              <h3 className="font-semibold mb-2">Archivo de Configuración</h3>
-              <p className="text-gray-300 text-sm">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <FileText className="h-8 w-8 text-blue-500 mb-3" />
+              <h3 className="font-semibold mb-2 text-gray-800">Archivo de Configuración</h3>
+              <p className="text-gray-600 text-sm">
                 Archivo especial que le dice a Git qué archivos NO debe rastrear ni subir al repositorio.
               </p>
             </div>
-            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
-              <Shield className="h-8 w-8 text-yellow-400 mb-3" />
-              <h3 className="font-semibold mb-2">Protección Automática</h3>
-              <p className="text-gray-300 text-sm">
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+              <Shield className="h-8 w-8 text-yellow-500 mb-3" />
+              <h3 className="font-semibold mb-2 text-gray-800">Protección Automática</h3>
+              <p className="text-gray-600 text-sm">
                 Evita automáticamente que datos sensibles como API keys, passwords y datos personales lleguen a GitHub.
               </p>
             </div>
-            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
-              <Settings className="h-8 w-8 text-green-400 mb-3" />
-              <h3 className="font-semibold mb-2">Limpieza del Repo</h3>
-              <p className="text-gray-300 text-sm">
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+              <Settings className="h-8 w-8 text-green-500 mb-3" />
+              <h3 className="font-semibold mb-2 text-gray-800">Limpieza del Repo</h3>
+              <p className="text-gray-600 text-sm">
                 Mantiene el repositorio limpio sin archivos temporales, builds o dependencias.
               </p>
             </div>
@@ -262,32 +265,32 @@ docker-compose.override.yml
         </div>
 
         {/* .gitignore Completo y Mejorado */}
-        <div className="bg-slate-800/50 rounded-xl p-6 mb-8">
+        <div className="bg-white rounded-xl shadow-md p-6">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
-              <FileText className="h-6 w-6 text-purple-400" />
-              <h2 className="text-2xl font-bold">.gitignore Completo para tu Proyecto</h2>
+              <FileText className="h-6 w-6 text-purple-500" />
+              <h2 className="text-2xl font-bold text-gray-800">.gitignore Completo para tu Proyecto</h2>
             </div>
             <button
               onClick={() => copyToClipboard(gitignoreCompleto, 'gitignore')}
-              className="flex items-center gap-2 bg-purple-500 hover:bg-purple-600 px-4 py-2 rounded-lg transition-colors"
+              className="flex items-center gap-2 bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition-colors"
             >
               <Copy className="h-4 w-4" />
               {copiedSection === 'gitignore' ? '¡Copiado!' : 'Copiar Todo'}
             </button>
           </div>
           
-          <div className="bg-slate-900 rounded-lg p-4 overflow-x-auto">
-            <pre className="text-sm text-green-300">
+          <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+            <pre className="text-sm text-green-400">
               <code>{gitignoreCompleto}</code>
             </pre>
           </div>
           
-          <div className="mt-4 p-4 bg-blue-500/10 border border-blue-500/30 rounded-lg">
-            <h3 className="font-semibold text-blue-300 mb-2">📝 Cómo actualizar tu .gitignore:</h3>
-            <ol className="text-blue-200 space-y-1">
+          <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <h3 className="font-semibold text-blue-700 mb-2">📝 Cómo actualizar tu .gitignore:</h3>
+            <ol className="text-blue-600 space-y-1">
               <li>1. Copia el contenido completo de arriba</li>
-              <li>2. Abre tu archivo <code className="bg-blue-500/20 px-1 rounded">.gitignore</code></li>
+              <li>2. Abre tu archivo <code className="bg-blue-100 px-1 rounded">.gitignore</code></li>
               <li>3. Reemplaza todo el contenido con esta versión mejorada</li>
               <li>4. Guarda el archivo</li>
             </ol>
@@ -295,26 +298,26 @@ docker-compose.override.yml
         </div>
 
         {/* Comandos Esenciales */}
-        <div className="bg-slate-800/50 rounded-xl p-6 mb-8">
+        <div className="bg-white rounded-xl shadow-md p-6">
           <div className="flex items-center gap-3 mb-4">
-            <Terminal className="h-6 w-6 text-cyan-400" />
-            <h2 className="text-2xl font-bold">Comandos Esenciales de Git</h2>
+            <Terminal className="h-6 w-6 text-cyan-500" />
+            <h2 className="text-2xl font-bold text-gray-800">Comandos Esenciales de Git</h2>
           </div>
           <div className="grid gap-4">
             {comandosEsenciales.map((cmd, index) => (
-              <div key={index} className="bg-slate-900/50 rounded-lg p-4">
+              <div key={index} className="bg-gray-50 rounded-lg p-4">
                 <div className="flex items-center justify-between mb-2">
-                  <code className="text-cyan-300 font-mono">{cmd.comando}</code>
+                  <code className="text-cyan-600 font-mono">{cmd.comando}</code>
                   <button
                     onClick={() => copyToClipboard(cmd.ejemplo, `cmd-${index}`)}
-                    className="text-xs bg-cyan-500/20 hover:bg-cyan-500/30 px-2 py-1 rounded transition-colors"
+                    className="text-xs bg-cyan-100 hover:bg-cyan-200 text-cyan-700 px-2 py-1 rounded transition-colors"
                   >
                     {copiedSection === `cmd-${index}` ? '✓' : 'Copiar'}
                   </button>
                 </div>
-                <p className="text-gray-300 text-sm mb-2">{cmd.descripcion}</p>
-                <div className="bg-black/30 rounded p-2">
-                  <code className="text-green-300 text-sm">{cmd.ejemplo}</code>
+                <p className="text-gray-600 text-sm mb-2">{cmd.descripcion}</p>
+                <div className="bg-gray-900 rounded p-2">
+                  <code className="text-green-400 text-sm">{cmd.ejemplo}</code>
                 </div>
               </div>
             ))}
@@ -322,23 +325,23 @@ docker-compose.override.yml
         </div>
 
         {/* Errores Comunes */}
-        <div className="bg-slate-800/50 rounded-xl p-6 mb-8">
+        <div className="bg-white rounded-xl shadow-md p-6">
           <div className="flex items-center gap-3 mb-4">
-            <AlertTriangle className="h-6 w-6 text-orange-400" />
-            <h2 className="text-2xl font-bold">Errores Comunes y Soluciones</h2>
+            <AlertTriangle className="h-6 w-6 text-orange-500" />
+            <h2 className="text-2xl font-bold text-gray-800">Errores Comunes y Soluciones</h2>
           </div>
           <div className="space-y-4">
             {erroresComunes.map((error, index) => (
-              <div key={index} className="bg-slate-900/50 rounded-lg p-4">
+              <div key={index} className="bg-gray-50 rounded-lg p-4">
                 <div className="flex items-start gap-3">
-                  <XCircle className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
+                  <XCircle className="h-5 w-5 text-red-500 mt-1 flex-shrink-0" />
                   <div className="flex-1">
-                    <h3 className="font-semibold text-red-300 mb-1">{error.error}</h3>
-                    <p className="text-gray-300 text-sm mb-2">
-                      <span className="text-orange-300">Causa:</span> {error.causa}
+                    <h3 className="font-semibold text-red-600 mb-1">{error.error}</h3>
+                    <p className="text-gray-600 text-sm mb-2">
+                      <span className="text-orange-600">Causa:</span> {error.causa}
                     </p>
-                    <div className="bg-black/30 rounded p-2">
-                      <span className="text-green-300 text-sm font-mono">{error.solucion}</span>
+                    <div className="bg-gray-900 rounded p-2">
+                      <span className="text-green-400 text-sm font-mono">{error.solucion}</span>
                     </div>
                   </div>
                 </div>
@@ -348,31 +351,31 @@ docker-compose.override.yml
         </div>
 
         {/* Verificación para tu Proyecto */}
-        <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/30 rounded-xl p-6 mb-8">
+        <div className="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-xl p-6">
           <div className="flex items-center gap-3 mb-4">
-            <CheckCircle className="h-6 w-6 text-green-400" />
-            <h2 className="text-2xl font-bold">Verificación para tu Proyecto</h2>
+            <CheckCircle className="h-6 w-6 text-green-500" />
+            <h2 className="text-2xl font-bold text-gray-800">Verificación para tu Proyecto</h2>
           </div>
           
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h3 className="font-semibold text-green-300 mb-3">✅ Ejecuta estos comandos:</h3>
+              <h3 className="font-semibold text-green-700 mb-3">✅ Ejecuta estos comandos:</h3>
               <div className="space-y-2">
-                <div className="bg-black/30 rounded p-2">
-                  <code className="text-green-300 text-sm">git status</code>
+                <div className="bg-gray-900 rounded p-2">
+                  <code className="text-green-400 text-sm">git status</code>
                 </div>
-                <div className="bg-black/30 rounded p-2">
-                  <code className="text-green-300 text-sm">git check-ignore .env</code>
+                <div className="bg-gray-900 rounded p-2">
+                  <code className="text-green-400 text-sm">git check-ignore .env</code>
                 </div>
-                <div className="bg-black/30 rounded p-2">
-                  <code className="text-green-300 text-sm">git ls-files | findstr ".env"</code>
+                <div className="bg-gray-900 rounded p-2">
+                  <code className="text-green-400 text-sm">git ls-files | findstr ".env"</code>
                 </div>
               </div>
             </div>
             
             <div>
-              <h3 className="font-semibold text-blue-300 mb-3">🎯 Resultados esperados:</h3>
-              <ul className="space-y-2 text-gray-300">
+              <h3 className="font-semibold text-blue-700 mb-3">🎯 Resultados esperados:</h3>
+              <ul className="space-y-2 text-gray-600">
                 <li>• .env NO debe aparecer en "Changes to be committed"</li>
                 <li>• git check-ignore debe decir que .env está ignorado</li>
                 <li>• git ls-files NO debe mostrar .env</li>
@@ -383,16 +386,16 @@ docker-compose.override.yml
         </div>
 
         {/* Datos Específicos del Proyecto */}
-        <div className="bg-slate-800/50 rounded-xl p-6 mb-8">
+        <div className="bg-white rounded-xl shadow-md p-6">
           <div className="flex items-center gap-3 mb-4">
-            <Database className="h-6 w-6 text-purple-400" />
-            <h2 className="text-2xl font-bold">Protección de Datos del Proyecto Orquestación de Agentes</h2>
+            <Database className="h-6 w-6 text-purple-500" />
+            <h2 className="text-2xl font-bold text-gray-800">Protección de Datos del Proyecto Orquestación de Agentes</h2>
           </div>
           
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
-              <h3 className="font-semibold text-green-300 mb-3">✅ Datos que SÍ se guardan en Git:</h3>
-              <ul className="space-y-1 text-green-200 text-sm">
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+              <h3 className="font-semibold text-green-700 mb-3">✅ Datos que SÍ se guardan en Git:</h3>
+              <ul className="space-y-1 text-green-600 text-sm">
                 <li>• Código fuente (.tsx, .ts, .js)</li>
                 <li>• Configuraciones públicas</li>
                 <li>• Documentación (.md)</li>
@@ -401,9 +404,9 @@ docker-compose.override.yml
               </ul>
             </div>
             
-            <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
-              <h3 className="font-semibold text-red-300 mb-3">🚫 Datos que NO se guardan (protegidos):</h3>
-              <ul className="space-y-1 text-red-200 text-sm">
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+              <h3 className="font-semibold text-red-700 mb-3">🚫 Datos que NO se guardan (protegidos):</h3>
+              <ul className="space-y-1 text-red-600 text-sm">
                 <li>• Tu progreso personal (.env con configuraciones)</li>
                 <li>• API keys (OpenAI, Claude, etc.)</li>
                 <li>• Bases de datos locales (.sqlite)</li>
@@ -413,9 +416,9 @@ docker-compose.override.yml
             </div>
           </div>
           
-          <div className="mt-4 p-4 bg-blue-500/10 border border-blue-500/30 rounded-lg">
-            <h3 className="font-semibold text-blue-300 mb-2">💡 Tu progreso se mantiene local:</h3>
-            <p className="text-blue-200 text-sm">
+          <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <h3 className="font-semibold text-blue-700 mb-2">💡 Tu progreso se mantiene local:</h3>
+            <p className="text-blue-600 text-sm">
               Como explicamos en la documentación, tu progreso real se guarda en localStorage del navegador, 
               no en archivos que Git pueda rastrear. Esto significa que es completamente privado y seguro.
             </p>
@@ -423,26 +426,27 @@ docker-compose.override.yml
         </div>
 
         {/* Pasos Siguientes */}
-        <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-xl p-6">
+        <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-xl p-6">
           <div className="flex items-center gap-3 mb-4">
-            <GitBranch className="h-6 w-6 text-purple-400" />
-            <h2 className="text-2xl font-bold">Próximos Pasos</h2>
+            <GitBranch className="h-6 w-6 text-purple-500" />
+            <h2 className="text-2xl font-bold text-gray-800">Próximos Pasos</h2>
           </div>
           
           <div className="grid md:grid-cols-3 gap-4">
-            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
-              <h3 className="font-semibold text-purple-300 mb-2">1. Actualizar .gitignore</h3>
-              <p className="text-gray-300 text-sm">Copia el .gitignore completo de este tutorial</p>
+            <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+              <h3 className="font-semibold text-purple-700 mb-2">1. Actualizar .gitignore</h3>
+              <p className="text-gray-600 text-sm">Copia el .gitignore completo de este tutorial</p>
             </div>
-            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-              <h3 className="font-semibold text-blue-300 mb-2">2. Verificar configuración</h3>
-              <p className="text-gray-300 text-sm">Ejecuta los comandos de verificación</p>
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <h3 className="font-semibold text-blue-700 mb-2">2. Verificar configuración</h3>
+              <p className="text-gray-600 text-sm">Ejecuta los comandos de verificación</p>
             </div>
-            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
-              <h3 className="font-semibold text-green-300 mb-2">3. Continuar desarrollo</h3>
-              <p className="text-gray-300 text-sm">Tu proyecto está protegido y listo</p>
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+              <h3 className="font-semibold text-green-700 mb-2">3. Continuar desarrollo</h3>
+              <p className="text-gray-600 text-sm">Tu proyecto está protegido y listo</p>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
