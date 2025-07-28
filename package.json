@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
+    "dev:full": "concurrently \"npm run dev\" \"npm run db:studio\""
   },
   "dependencies": {
     "next": "14.1.0",
@@ -15,25 +16,29 @@
     "react-dom": "^18",
     "@supabase/supabase-js": "^2.39.3",
     "@supabase/auth-helpers-nextjs": "^0.8.7",
-    "lucide-react": "^0.314.0",
-    "tailwindcss": "^3.3.0",
-    "typescript": "^5",
-    "socket.io-client": "^4.7.2",
-    "axios": "^1.6.5",
     "sqlite3": "^5.1.7",
     "better-sqlite3": "^9.3.0",
+    "axios": "^1.6.5",
+    "socket.io-client": "^4.7.2",
+    "lucide-react": "^0.314.0",
+    "tailwindcss": "^3.3.0",
+    "framer-motion": "^10.18.0",
+    "zod": "^3.22.4",
+    "zustand": "^4.4.7",
+    "typescript": "^5",
     "events": "^3.3.0",
-    "framer-motion": "^10.18.0"
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/better-sqlite3": "^7.6.9",
+    "@types/uuid": "^9.0.7",
     "autoprefixer": "^10.0.1",
     "postcss": "^8",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
-    "concurrently": "^8.2.2",
-    "@types/better-sqlite3": "^7.6.9"
+    "concurrently": "^8.2.2"
   }
 }
