@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, Play, CheckCircle, Circle, Code, FileCode, Terminal, Clock, Brain, Star, Flask, Calendar } from 'lucide-react'
+import { ArrowLeft, Play, CheckCircle, Circle, Code, FileCode, Terminal, Clock, Brain, Star, Beaker, Calendar } from 'lucide-react'
 import ChatAgenteBasico from '@/components/academia/ChatAgenteBasico'
 
 interface Ejercicio {
@@ -639,7 +639,7 @@ class AgenteConMemoria extends AgenteBasico {
         {/* Interactive Demo */}
         <div className="mt-8">
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-            <Flask className="w-6 h-6 text-blue-400" />
+            <Beaker className="w-6 h-6 text-blue-400" />
             Prueba tu Agente Básico
           </h2>
           <ChatAgenteBasico 
@@ -655,7 +655,7 @@ class AgenteConMemoria extends AgenteBasico {
               href="/agencia/laboratorio"
               className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors"
             >
-              <Flask className="w-5 h-5" />
+              <Beaker className="w-5 h-5" />
               Ir al Laboratorio Completo
             </Link>
           </div>
