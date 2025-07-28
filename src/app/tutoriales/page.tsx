@@ -187,6 +187,17 @@ export default function Tutoriales() {
       color: 'orange',
       link: '/tutoriales/estilos-nextjs',
       temas: ['CSS-in-JS', 'Styled Components', 'Theme switching', 'Responsive design']
+    },
+    {
+      titulo: 'Texto Responsive',
+      subtitulo: 'Control de overflow',
+      descripcion: 'Soluciona problemas de texto recortado en diseños responsive',
+      nivel: 'Intermedio',
+      tiempo: '25 min',
+      icon: Monitor,
+      color: 'blue',
+      link: '/tutoriales/texto-responsive-overflow',
+      temas: ['Responsive text', 'Overflow control', 'Flexbox layout', 'Breakpoints']
     }
   ];
 

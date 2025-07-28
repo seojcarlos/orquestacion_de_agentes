@@ -48,11 +48,11 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-blue-600/20 to-cyan-600/20 blur-3xl" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6 flex-wrap px-4 py-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0">
                 <Brain className="w-10 h-10 text-white" />
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent text-center sm:text-left leading-normal py-2 min-h-fit">
                 Orquestación de Agentes IA
               </h1>
             </div>

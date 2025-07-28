@@ -75,7 +75,7 @@ export default function NavBar() {
   }
 
   const currentSection = getCurrentSection()
-  const showSubNav = currentSection === 'academia'
+  // Removido el showSubNav que causaba el menú horizontal
 
   return (
     <>
@@ -175,30 +175,6 @@ export default function NavBar() {
           </div>
         )}
       </nav>
-
-      {/* Sub Navigation for Academia */}
-      {showSubNav && (
-        <div className="bg-gray-900/50 border-b border-gray-800 backdrop-blur-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-6 py-3 overflow-x-auto">
-              <span className="text-sm font-medium text-gray-400 whitespace-nowrap">Academia IA:</span>
-              {mainNavItems.find(item => item.href === '/academia')?.subItems?.map((subItem) => (
-                <Link
-                  key={subItem.href}
-                  href={subItem.href}
-                  className={`flex items-center gap-2 px-3 py-1 rounded-md text-sm whitespace-nowrap transition-colors ${
-                    pathname === subItem.href
-                      ? 'bg-purple-600/20 text-purple-400 border border-purple-600/30'
-                      : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
-                  }`}
-                >
-                  {subItem.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
     </>
   )
 }
