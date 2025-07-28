@@ -2,6 +2,8 @@
 
 ## 🆘 QUÉ HACER SI SE ELIMINA ALGO IMPORTANTE
 
+> **⚠️ CONTEXTO**: Este es un proyecto de auto-formación personal de 48 semanas. Los datos de progreso son REALES y valiosos. Las evaluaciones de IA están en modo demo hasta conectar APIs reales.
+
 ### 1. **NO ENTRAR EN PÁNICO**
 ```bash
 # El historial de Git mantiene TODO
@@ -102,13 +104,35 @@ git log --oneline --name-only | grep "MenuLateral"
 
 ## 🎯 CASOS ESPECÍFICOS DE ESTE PROYECTO
 
+### 🔄 **DATOS CRÍTICOS A PROTEGER**
+
+#### **✅ DATOS REALES (Tu progreso personal)**
+```bash
+# Sistema de progreso local
+src/lib/academia/SistemaProgreso.ts
+src/hooks/useProgresoAcademia.ts
+
+# Base de datos de agentes
+mi-agencia-ia/src/server.js
+mi-agencia-ia/database/ (si existe)
+```
+
+#### **🧪 DATOS DEMO (Recuperables)**
+```bash
+# Evaluaciones mock (se pueden regenerar)
+src/lib/academia/ClaudeFlowAcademia.ts (línea 72: mockMode = true)
+
+# Datos de demostración
+src/lib/academia/datos-mock.ts
+```
+
 ### MenuLateral.tsx (YA RESUELTO)
 ```bash
 # Lo que hicimos:
 git checkout ba234c7 -- src/components/MenuLateral.tsx
 ```
 
-### Si se pierde mi-agencia-ia/
+### Si se pierde mi-agencia-ia/ (CRÍTICO)
 ```bash
 # Restaurar desde commit inicial
 git checkout ba234c7 -- mi-agencia-ia/
@@ -118,6 +142,15 @@ git checkout ba234c7 -- mi-agencia-ia/
 ```bash
 # Restaurar tutoriales específicos
 git checkout HEAD~2 -- src/app/tutoriales/
+```
+
+### Si se pierde el progreso del usuario
+```bash
+# El progreso real está en localStorage del navegador
+# Para backup manual:
+# 1. Abrir DevTools > Application > Local Storage
+# 2. Copiar datos con clave "sistema-progreso-academia"
+# 3. Guardar en archivo de texto como backup
 ```
 
 ---

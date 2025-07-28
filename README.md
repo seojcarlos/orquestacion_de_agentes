@@ -1,10 +1,12 @@
-# 🧠 Orquestación de Agentes IA - Academia & Agencia Digital
+# 🧠 Orquestación de Agentes IA - Plataforma de Auto-Formación Personal
 
 [![GitHub license](https://img.shields.io/github/license/seojcarlos/orquestacion_de_agentes)](https://github.com/seojcarlos/orquestacion_de_agentes/blob/master/LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-green)](https://nodejs.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-14.1.0-black)](https://nextjs.org/)
 
-Una plataforma educativa unificada para dominar el desarrollo de agentes IA, desde conceptos básicos hasta sistemas de producción complejos con Claude Flow.
+> **🎯 Objetivo**: Plataforma personal de auto-formación para crear tu propia agencia digital con IA en 48 semanas (52 con vacaciones)
+
+**Plataforma de uso personal** para dominar el desarrollo de agentes IA, desde conceptos básicos hasta sistemas de producción complejos con Claude Flow.
 
 ## 🚀 Inicio Rápido
 
@@ -45,9 +47,14 @@ npm run dev:all
 - **Evaluación IA** con Claude Flow para feedback inteligente
 
 ### 🏢 Agencia Digital IA
-**Formación completa de 12 meses** para crear una agencia digital potenciada por IA:
+**Programa personal de 48 semanas efectivas (52 con vacaciones)** para crear tu propia agencia digital:
 
-- **960+ tareas** estructuradas en 48 semanas
+- **48 semanas** de formación estructurada + 4 semanas de vacaciones = 1 año completo
+- **Uso personal**: Tu progreso, tu ritmo, tu agencia
+- **Sistema modular**: Cada semana se enfoca en una competencia específica
+- **Datos reales**: Tu progreso se guarda localmente (localStorage + SQLite)
+
+> ⚠️ **Nota importante**: Los datos de progreso son REALES y se guardan localmente. Las evaluaciones de IA están en modo demo/mock hasta que conectes APIs reales de OpenAI/Claude.
 - **4 fases** de desarrollo: Fundamentos, Orquestación, Visualización, Productización
 - **11 agentes especializados** para servicios completos
 - **Sistema SaaS** multi-tenant con facturación
@@ -310,16 +317,45 @@ function ComponenteEvaluacion() {
 
 ## 📊 Estado del Proyecto
 
+### 🔍 **DATOS REALES vs DATOS DEMO**
+
+> ⚠️ **IMPORTANTE**: Para evitar confusiones sobre qué datos son reales y cuáles son de demostración.
+
+#### ✅ **DATOS REALES (Se guardan y persisten)**
+- **Tu progreso personal**: Semana actual, ejercicios completados, tiempo invertido
+- **Tus logros**: Logros desbloqueados, fechas de obtención, rachas reales
+- **Tus configuraciones**: Preferencias de interfaz, configuración de agentes
+- **Tu historial**: Ejercicios intentados, puntuaciones reales obtenidas
+- **Base de datos local**: SQLite en mi-agencia-ia para tareas y memoria de agentes
+
+**Ubicación**: `localStorage` del navegador + `./mi-agencia-ia/database/` (SQLite)
+
+#### 🧪 **DATOS DEMO/MOCK (Solo para demostración)**
+- **Evaluaciones de IA**: Las evaluaciones automáticas de código están simuladas
+- **Feedback inteligente**: Las sugerencias "de IA" están pre-programadas
+- **Análisis de complejidad**: Los análisis automáticos usan algoritmos básicos
+- **Adaptación de dificultad**: Lógica simplificada, no IA real
+
+**Cambiar a datos reales**:
+```typescript
+// src/lib/academia/ClaudeFlowAcademia.ts - Línea 72
+private mockMode: boolean = false // ⬅️ Cambiar a false
+
+// Luego configurar API keys en .env.local
+CLAUDE_API_KEY=tu_api_key_real
+OPENAI_API_KEY=tu_api_key_real
+```
+
 ### ✅ Completado
 
 #### 🎓 Academia de Agentes IA
 - ✅ **Estructura completa** de 4 semanas
 - ✅ **Agente básico funcional** con chat interactivo
-- ✅ **Sistema de progreso** con persistencia
-- ✅ **Gamificación completa** con logros y niveles
+- ✅ **Sistema de progreso** con persistencia REAL
+- ✅ **Gamificación completa** con logros y niveles REALES
 - ✅ **Laboratorio** de experimentación
-- ✅ **Dashboard** de estadísticas detalladas
-- ✅ **Ejercicios interactivos** con evaluación
+- ✅ **Dashboard** de estadísticas detalladas REALES
+- ✅ **Ejercicios interactivos** con evaluación (MODO DEMO)
 
 #### 🌐 Navegación Unificada
 - ✅ **NavBar responsive** con subnav contextual
