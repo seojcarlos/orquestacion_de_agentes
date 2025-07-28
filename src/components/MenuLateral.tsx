@@ -34,6 +34,7 @@ export default function MenuLateral() {
         { titulo: 'Hooks de React', href: '/tutoriales/hooks-react', icono: Wrench },
         { titulo: 'Estado y Props', href: '/tutoriales/estado-props', icono: Database },
         { titulo: 'CSS en Next.js', href: '/tutoriales/css-nextjs', icono: Palette },
+        { titulo: 'Gitignore Correcto', href: '/tutoriales/gitignore-correcto', icono: GitBranch, badge: 'NEW' },
         { titulo: '── Intermedios ──', icono: null },
         { titulo: 'Sistema de Rutas', href: '/tutoriales/sistema-rutas', icono: Route },
         { titulo: 'Formularios', href: '/tutoriales/formularios', icono: FileCode },

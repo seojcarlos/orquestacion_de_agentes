@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BookOpen, Rocket, Brain, ArrowRight, Code2, Zap, Package, Palette, AlertCircle, Database, Wrench, Component, FileCode, FolderOpen, Bot, Server, Monitor, Layers, Bug } from 'lucide-react';
+import { BookOpen, Rocket, Brain, ArrowRight, Code2, Zap, Package, Palette, AlertCircle, Database, Wrench, Component, FileCode, FolderOpen, Bot, Server, Monitor, Layers, Bug, GitBranch } from 'lucide-react';
 
 export default function Tutoriales() {
   const tutoriales = [
@@ -60,6 +60,17 @@ export default function Tutoriales() {
       color: 'pink',
       link: '/tutoriales/css-nextjs',
       temas: ['CSS Modules', 'Tailwind', 'CSS-in-JS', 'Global CSS']
+    },
+    {
+      titulo: 'Gitignore Correcto',
+      subtitulo: 'Protege tu código y datos',
+      descripcion: 'Tutorial completo para configurar .gitignore correctamente y proteger datos sensibles',
+      nivel: 'Principiante',
+      tiempo: '15 min',
+      icon: GitBranch,
+      color: 'green',
+      link: '/tutoriales/gitignore-correcto',
+      temas: ['.env protection', 'API keys', 'Personal data', 'Git security']
     },
     
     // Tutoriales intermedios
