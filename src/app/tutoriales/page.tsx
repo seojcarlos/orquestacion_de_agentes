@@ -97,6 +97,17 @@ export default function Tutoriales() {
       temas: ['API Routes', 'Webhooks', 'Validación', 'Seguridad']
     },
     {
+      titulo: 'Claude Monitor Ubuntu',
+      subtitulo: 'Conexión en Linux',
+      descripcion: 'Comandos básicos para lanzar Claude Monitor cada vez que abras tu terminal',
+      nivel: 'Especial',
+      tiempo: '10 min',
+      icon: Server,
+      color: 'green',
+      link: '/tutoriales/claude-monitor-ubuntu',
+      temas: ['Terminal', 'Entorno virtual', 'Claude Monitor', 'Ubuntu']
+    },
+    {
       titulo: 'Claude Flow',
       subtitulo: 'Orquestación de IA para Desarrollo',
       descripcion: 'Aprende cómo usar Claude Flow para revolucionar tu flujo de desarrollo con IA',
