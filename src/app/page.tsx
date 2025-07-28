@@ -6,15 +6,6 @@ import { Brain, BookOpen, Building2, Zap, ArrowRight, Star, Users, Clock, Trophy
 export default function HomePage() {
   const features = [
     {
-      title: 'Academia de Agentes IA',
-      description: 'Programa progresivo de 4 semanas para dominar el desarrollo de agentes IA desde cero.',
-      href: '/academia',
-      icon: Brain,
-      color: 'from-purple-600 to-blue-600',
-      badge: 'Nuevo',
-      stats: '4 semanas • 20-30 hrs'
-    },
-    {
       title: 'Agencia Digital IA',
       description: 'Formación completa de 12 meses para crear una agencia digital potenciada por IA.',
       href: '/agencia',
@@ -71,11 +62,11 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/academia"
+                href="/agencia"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 shadow-lg"
               >
-                <Brain className="w-6 h-6" />
-                Comenzar en Academia IA
+                <Building2 className="w-6 h-6" />
+                Comenzar en Agencia IA
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
@@ -204,11 +195,11 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/academia"
+              href="/agencia"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 rounded-xl font-semibold transition-all transform hover:scale-105"
             >
-              <Brain className="w-5 h-5" />
-              Empezar con la Academia
+              <Building2 className="w-5 h-5" />
+              Empezar con la Agencia
             </Link>
             <Link
               href="/agencia"

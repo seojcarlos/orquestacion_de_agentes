@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BookOpen, Rocket, Brain, ArrowRight, Code2, Zap, Package, Palette, AlertCircle, Database, Wrench, Component, FileCode, FolderOpen, Bot, Server } from 'lucide-react';
+import { BookOpen, Rocket, Brain, ArrowRight, Code2, Zap, Package, Palette, AlertCircle, Database, Wrench, Component, FileCode, FolderOpen, Bot, Server, Monitor, Layers, Bug } from 'lucide-react';
 
 export default function Tutoriales() {
   const tutoriales = [
@@ -141,6 +141,52 @@ export default function Tutoriales() {
       color: 'cyan',
       link: '/tutoriales/optimizacion',
       temas: ['Lazy loading', 'Image optimization', 'Bundle size', 'Caching']
+    },
+    
+    // Tutoriales adicionales
+    {
+      titulo: 'Art Tool',
+      subtitulo: 'Herramientas creativas',
+      descripcion: 'Crea herramientas artísticas interactivas con React y Canvas',
+      nivel: 'Intermedio',
+      tiempo: '40 min',
+      icon: Palette,
+      color: 'pink',
+      link: '/tutoriales/art-tool',
+      temas: ['Canvas', 'Interactividad', 'Creative coding', 'Animaciones']
+    },
+    {
+      titulo: 'Context Engineering SaaS',
+      subtitulo: 'Arquitectura para SaaS',
+      descripcion: 'Diseña sistemas SaaS robustos con Context Engineering',
+      nivel: 'Avanzado',
+      tiempo: '50 min',
+      icon: Layers,
+      color: 'purple',
+      link: '/tutoriales/context-engineering-saas',
+      temas: ['Arquitectura', 'Escalabilidad', 'Multi-tenant', 'Performance']
+    },
+    {
+      titulo: 'Errores Comunes',
+      subtitulo: 'Debug y soluciones',
+      descripcion: 'Identifica y resuelve los errores más frecuentes en Next.js',
+      nivel: 'Intermedio',
+      tiempo: '30 min',
+      icon: Bug,
+      color: 'red',
+      link: '/tutoriales/errores-comunes',
+      temas: ['Debugging', 'Error handling', 'Best practices', 'Troubleshooting']
+    },
+    {
+      titulo: 'Estilos en Next.js',
+      subtitulo: 'CSS moderno',
+      descripcion: 'Manejo avanzado de estilos y temas en aplicaciones Next.js',
+      nivel: 'Intermedio',
+      tiempo: '35 min',
+      icon: Palette,
+      color: 'orange',
+      link: '/tutoriales/estilos-nextjs',
+      temas: ['CSS-in-JS', 'Styled Components', 'Theme switching', 'Responsive design']
     }
   ];
 
