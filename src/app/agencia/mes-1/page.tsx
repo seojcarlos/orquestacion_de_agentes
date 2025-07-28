@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, ArrowRight, Play, CheckCircle, Circle, Code, Brain, Users, Zap, Clock, Star, Calendar } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Play, CheckCircle, Circle, Code, Brain, Users, Zap, Clock, Star, Calendar, Home, ChevronRight } from 'lucide-react'
 
 interface Semana {
   numero: number
@@ -117,6 +117,36 @@ export default function Mes1Page() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100">
+      {/* Breadcrumbs */}
+      <nav className="bg-gray-900/30 backdrop-blur-sm border-b border-gray-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <div className="flex items-center space-x-2 text-sm">
+            <Link 
+              href="/agencia" 
+              className="flex items-center gap-1 text-blue-400 hover:text-blue-300 transition-colors hover:underline"
+            >
+              <Home className="w-4 h-4" />
+              Dashboard
+            </Link>
+            <ChevronRight className="w-4 h-4 text-gray-500" />
+            <span className="text-white font-medium">Mes 1: Fundamentos de Agentes IA</span>
+          </div>
+          
+          <div className="flex items-center gap-4 mt-2">
+            <Link 
+              href="/agencia" 
+              className="text-xs text-gray-400 hover:text-gray-300 transition-colors hover:underline"
+            >
+              ← Volver al roadmap visual
+            </Link>
+            <span className="text-xs text-gray-600">|</span>
+            <span className="text-xs text-gray-400">
+              📍 Vista detallada del primer mes de formación
+            </span>
+          </div>
+        </div>
+      </nav>
+      
       {/* Header */}
       <header className="border-b border-gray-800 bg-gray-900/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { 
@@ -15,81 +16,17 @@ import {
   FileCode,
   Zap,
   Award,
-  TrendingUp
+  TrendingUp,
+  Home,
+  ChevronRight
 } from 'lucide-react'
 
-export default function F1M1S1D1Page() {
-  const [activeSection, setActiveSection] = useState('teoria')
-  const [completedSections, setCompletedSections] = useState<string[]>([])
-  const [progress, setProgress] = useState(0)
-
-  // Marcar sección como completada
-  const completeSection = (section: string) => {
-    if (!completedSections.includes(section)) {
-      const newCompleted = [...completedSections, section]
-      setCompletedSections(newCompleted)
-      setProgress((newCompleted.length / 5) * 100)
-    }
-  }
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
-      {/* Task Header */}
-      <TaskHeader 
-        taskId="F1-M1-S1-D1" 
-        title="Setup inicial del proyecto + Principios de Clean Code"
-        description="Construye las bases sólidas para desarrollo profesional de agentes IA"
-        progress={progress}
-        completedSections={completedSections}
-        onSectionChange={setActiveSection}
-        activeSection={activeSection}
-      />
-
-      <div className="container mx-auto px-4 py-8">
-        {/* SECCIÓN 1: TEORÍA EXPANDIDA */}
-        {activeSection === 'teoria' && (
-          <TheorySection 
-            onComplete={() => completeSection('teoria')}
-            onNext={() => setActiveSection('ejemplos')}
-          />
-        )}
-
-        {/* SECCIÓN 2: EJEMPLOS PROGRESIVOS */}
-        {activeSection === 'ejemplos' && (
-          <ExamplesSection 
-            onComplete={() => completeSection('ejemplos')}
-            onNext={() => setActiveSection('practica')}
-          />
-        )}
-
-        {/* SECCIÓN 3: PRÁCTICA INTERACTIVA */}
-        {activeSection === 'practica' && (
-          <PracticeSection 
-            onComplete={() => completeSection('practica')}
-            onNext={() => setActiveSection('evaluacion')}
-          />
-        )}
-
-        {/* SECCIÓN 4: EVALUACIÓN IA */}
-        {activeSection === 'evaluacion' && (
-          <EvaluationSection 
-            onComplete={() => completeSection('evaluacion')}
-            onNext={() => setActiveSection('proyecto')}
-          />
-        )}
-
-        {/* SECCIÓN 5: PROYECTO FINAL */}
-        {activeSection === 'proyecto' && (
-          <ProjectSection 
-            onComplete={() => completeSection('proyecto')}
-          />
-        )}
-      </div>
-    </div>
-  )
+// Interfaces
+interface SectionProps {
+  onComplete: () => void
+  onNext?: () => void
 }
 
-// TaskHeader Component
 interface TaskHeaderProps {
   taskId: string
   title: string
@@ -100,6 +37,66 @@ interface TaskHeaderProps {
   activeSection: string
 }
 
+// Breadcrumbs Component
+function Breadcrumbs() {
+  return (
+    <nav className="bg-gray-900/30 backdrop-blur-sm border-b border-gray-800/50">
+      <div className="container mx-auto px-4 py-3">
+        <div className="flex items-center space-x-2 text-sm">
+          <Link 
+            href="/agencia" 
+            className="flex items-center gap-1 text-blue-400 hover:text-blue-300 transition-colors hover:underline"
+          >
+            <Home className="w-4 h-4" />
+            Dashboard
+          </Link>
+          <ChevronRight className="w-4 h-4 text-gray-500" />
+          <Link 
+            href="/agencia/mes-1" 
+            className="text-green-400 hover:text-green-300 transition-colors hover:underline"
+          >
+            Mes 1: Fundamentos IA
+          </Link>
+          <ChevronRight className="w-4 h-4 text-gray-500" />
+          <Link 
+            href="/agencia/mes-1/semana-1" 
+            className="text-purple-400 hover:text-purple-300 transition-colors hover:underline"
+          >
+            Semana 1: Setup & Arquitectura
+          </Link>
+          <ChevronRight className="w-4 h-4 text-gray-500" />
+          <span className="text-white font-medium">Día 1: Setup + Clean Code</span>
+        </div>
+        
+        {/* Quick Navigation */}
+        <div className="flex items-center gap-4 mt-2">
+          <Link 
+            href="/agencia" 
+            className="text-xs text-gray-400 hover:text-gray-300 transition-colors hover:underline"
+          >
+            ← Volver al roadmap visual
+          </Link>
+          <span className="text-xs text-gray-600">|</span>
+          <Link 
+            href="/agencia/mes-1" 
+            className="text-xs text-gray-400 hover:text-gray-300 transition-colors hover:underline"
+          >
+            � Ver todas las lecciones del Mes 1
+          </Link>
+          <span className="text-xs text-gray-600">|</span>
+          <Link 
+            href="/agencia/mes-1/semana-1" 
+            className="text-xs text-gray-400 hover:text-gray-300 transition-colors hover:underline"
+          >
+            📅 Ver cronograma de la Semana 1
+          </Link>
+        </div>
+      </div>
+    </nav>
+  )
+}
+
+// TaskHeader Component
 function TaskHeader({ 
   taskId, 
   title, 
@@ -168,12 +165,81 @@ function TaskHeader({
   )
 }
 
-// TheorySection Component - TEORÍA EXPANDIDA COMPLETA
-interface SectionProps {
-  onComplete: () => void
-  onNext?: () => void
+export default function F1M1S1D1Page() {
+  const [activeSection, setActiveSection] = useState('teoria')
+  const [completedSections, setCompletedSections] = useState<string[]>([])
+  const [progress, setProgress] = useState(0)
+
+  // Marcar sección como completada
+  const completeSection = (section: string) => {
+    if (!completedSections.includes(section)) {
+      const newCompleted = [...completedSections, section]
+      setCompletedSections(newCompleted)
+      setProgress((newCompleted.length / 5) * 100)
+    }
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+      {/* Breadcrumbs Navigation */}
+      <Breadcrumbs />
+      
+      {/* Task Header */}
+      <TaskHeader 
+        taskId="F1-M1-S1-D1" 
+        title="Setup inicial del proyecto + Principios de Clean Code"
+        description="Construye las bases sólidas para desarrollo profesional de agentes IA"
+        progress={progress}
+        completedSections={completedSections}
+        onSectionChange={setActiveSection}
+        activeSection={activeSection}
+      />
+
+      <div className="container mx-auto px-4 py-8">
+        {/* SECCIÓN 1: TEORÍA EXPANDIDA */}
+        {activeSection === 'teoria' && (
+          <TheorySection 
+            onComplete={() => completeSection('teoria')}
+            onNext={() => setActiveSection('ejemplos')}
+          />
+        )}
+
+        {/* SECCIÓN 2: EJEMPLOS PROGRESIVOS */}
+        {activeSection === 'ejemplos' && (
+          <ExamplesSection 
+            onComplete={() => completeSection('ejemplos')}
+            onNext={() => setActiveSection('practica')}
+          />
+        )}
+
+        {/* SECCIÓN 3: PRÁCTICA INTERACTIVA */}
+        {activeSection === 'practica' && (
+          <PracticeSection 
+            onComplete={() => completeSection('practica')}
+            onNext={() => setActiveSection('evaluacion')}
+          />
+        )}
+
+        {/* SECCIÓN 4: EVALUACIÓN IA */}
+        {activeSection === 'evaluacion' && (
+          <EvaluationSection 
+            onComplete={() => completeSection('evaluacion')}
+            onNext={() => setActiveSection('proyecto')}
+          />
+        )}
+
+        {/* SECCIÓN 5: PROYECTO FINAL */}
+        {activeSection === 'proyecto' && (
+          <ProjectSection 
+            onComplete={() => completeSection('proyecto')}
+          />
+        )}
+      </div>
+    </div>
+  )
 }
 
+// TheorySection Component - TEORÍA EXPANDIDA COMPLETA
 function TheorySection({ onComplete, onNext }: SectionProps) {
   return (
     <div className="space-y-8 animate-fade-in">
@@ -442,8 +508,8 @@ promptEngine.render(ANALYSIS_PROMPT, params)`}
                         <h6 className="text-sm font-semibold text-green-400 mb-2">AI Behavior Testing</h6>
                         <ul className="text-xs text-gray-300 space-y-1">
                           <li>• assert(result.includes(keyPhrase))</li>
-                          <li>• assert(sentiment(result) > 0.7)</li>
-                          <li>• assert(tokenCount < maxTokens)</li>
+                          <li>• assert(sentiment(result) &gt; 0.7)</li>
+                          <li>• assert(tokenCount &lt; maxTokens)</li>
                         </ul>
                       </div>
                     </div>
@@ -777,7 +843,7 @@ async function analyzeSentiment(text: string, options: AnalysisOptions = {}): Pr
                 </li>
                 <li className="flex items-center gap-2 text-green-400">
                   <CheckCircle className="w-5 h-5" />
-                  Testing comportamental > testing tradicional en IA
+                  Testing comportamental &gt; testing tradicional en IA
                 </li>
               </ul>
               
@@ -4396,34 +4462,6 @@ function FinalProject({ onComplete }: { onComplete: (score: number) => void }) {
           </Button>
         )}
       </div>
-    </div>
-  )
-}
-                  Ver Proyecto
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-          
-          <div className="flex gap-4">
-            <Button 
-              onClick={onComplete}
-              className="bg-orange-600 hover:bg-orange-700"
-            >
-              Evaluación Completada
-            </Button>
-            {onNext && (
-              <Button 
-                onClick={onNext}
-                variant="outline"
-                className="border-orange-500 text-orange-400"
-              >
-                Continuar con Proyecto Final →
-              </Button>
-            )}
-          </div>
-        </CardContent>
-      </Card>
     </div>
   )
 }

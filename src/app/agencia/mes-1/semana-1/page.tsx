@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, Play, CheckCircle, Circle, Code, FileCode, Terminal, Clock, Brain, Star, Beaker, Calendar } from 'lucide-react'
+import { ArrowLeft, Play, CheckCircle, Circle, Code, FileCode, Terminal, Clock, Brain, Star, Beaker, Calendar, Home, ChevronRight } from 'lucide-react'
 import ChatAgenteBasico from '@/components/academia/ChatAgenteBasico'
 
 interface Ejercicio {
@@ -410,6 +410,46 @@ class AgenteConMemoria extends AgenteBasico {
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100">
+      {/* Breadcrumbs */}
+      <nav className="bg-gray-900/30 backdrop-blur-sm border-b border-gray-800/50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <div className="flex items-center space-x-2 text-sm">
+            <Link 
+              href="/agencia" 
+              className="flex items-center gap-1 text-blue-400 hover:text-blue-300 transition-colors hover:underline"
+            >
+              <Home className="w-4 h-4" />
+              Dashboard
+            </Link>
+            <ChevronRight className="w-4 h-4 text-gray-500" />
+            <Link 
+              href="/agencia/mes-1" 
+              className="text-green-400 hover:text-green-300 transition-colors hover:underline"
+            >
+              Mes 1: Fundamentos IA
+            </Link>
+            <ChevronRight className="w-4 h-4 text-gray-500" />
+            <span className="text-white font-medium">Semana 1: Setup & Arquitectura Base</span>
+          </div>
+          
+          <div className="flex items-center gap-4 mt-2">
+            <Link 
+              href="/agencia" 
+              className="text-xs text-gray-400 hover:text-gray-300 transition-colors hover:underline"
+            >
+              ← Volver al roadmap visual
+            </Link>
+            <span className="text-xs text-gray-600">|</span>
+            <Link 
+              href="/agencia/mes-1" 
+              className="text-xs text-gray-400 hover:text-gray-300 transition-colors hover:underline"
+            >
+              📚 Ver todas las semanas del Mes 1
+            </Link>
+          </div>
+        </div>
+      </nav>
+      
       {/* Header */}
       <header className="border-b border-gray-800 bg-gray-900/50 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">

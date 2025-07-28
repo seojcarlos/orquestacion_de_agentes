@@ -10,6 +10,7 @@
   },
   "scripts": {
     "dev": "node src/server.js",
+    "dev:simple": "node src/simple-server.js",
     "start": "NODE_ENV=production node src/server.js",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch",
@@ -19,7 +20,6 @@
   "author": "AI Agency Development Team",
   "license": "MIT",
   "dependencies": {
-    "better-sqlite3": "^9.4.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
