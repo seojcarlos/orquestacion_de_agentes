@@ -1,0 +1,95 @@
+# 🔒 ARCHIVOS PROTEGIDOS - NO ELIMINAR SIN CONSENTIMIENTO EXPLÍCITO
+
+## 🚨 COMPONENTES CRÍTICOS DE UI/UX
+
+### Navegación y Layout
+- `src/components/MenuLateral.tsx` - Sidebar principal de navegación
+- `src/components/layout/NavBar.tsx` - Barra de navegación superior
+- `src/app/layout.tsx` - Layout raíz de la aplicación
+- `src/app/tutoriales/layout.tsx` - Layout específico de tutoriales
+
+### Páginas Principales
+- `src/app/page.tsx` - Homepage principal del proyecto
+- `src/app/tutoriales/page.tsx` - Listado principal de tutoriales
+- `src/app/agencia/page.tsx` - Landing de la formación
+
+## 📚 CONTENIDO EDUCATIVO PROTEGIDO
+
+### Tutoriales Completos (NO ELIMINAR)
+- `src/app/tutoriales/sintaxis-tsx/page.tsx`
+- `src/app/tutoriales/hooks-react/page.tsx`
+- `src/app/tutoriales/estado-props/page.tsx`
+- `src/app/tutoriales/css-nextjs/page.tsx`
+- `src/app/tutoriales/sistema-rutas/page.tsx`
+- `src/app/tutoriales/formularios/page.tsx`
+- `src/app/tutoriales/server-components/page.tsx`
+- `src/app/tutoriales/optimizacion/page.tsx`
+- `src/app/tutoriales/asistente-inteligente/page.tsx`
+- `src/app/tutoriales/gestion-proyecto/page.tsx`
+- `src/app/tutoriales/claude-monitor-ubuntu/page.tsx`
+- `src/app/tutoriales/art-tool/page.tsx`
+- `src/app/tutoriales/context-engineering-saas/page.tsx`
+- `src/app/tutoriales/errores-comunes/page.tsx`
+- `src/app/tutoriales/estilos-nextjs/page.tsx`
+- `src/app/tutoriales/texto-responsive-overflow/page.tsx`
+
+## ⚙️ SISTEMAS BACKEND PROTEGIDOS
+
+### Mi-Agencia-IA (Backend crítico)
+- `mi-agencia-ia/src/simple-server.js` - Servidor funcional
+- `mi-agencia-ia/src/server.js` - Servidor principal
+- `mi-agencia-ia/package.json` - Dependencias del backend
+- `mi-agencia-ia/src/core/taskValidator.js` - Validación de tareas
+
+### APIs y Rutas
+- `src/app/api/mi-agencia-ia/generate/route.ts`
+- `src/app/api/mi-agencia-ia/progress/route.ts`
+
+## 🎯 CONFIGURACIÓN Y SCRIPTS
+
+### Configuración del Proyecto
+- `package.json` - Dependencias principales
+- `next.config.js` - Configuración de Next.js
+- `tailwind.config.js` - Configuración de Tailwind
+- `tsconfig.json` - Configuración de TypeScript
+
+### Scripts Útiles
+- `scripts/status.js` - Estado del sistema
+- `scripts/test-connectivity.js` - Testing de conexiones
+- `start-system.bat` - Script de inicio del sistema
+
+## 📝 DOCUMENTACIÓN CRÍTICA
+
+### Documentación del Proyecto
+- `README.md` - Documentación principal
+- `PLAN_48_SEMANAS.md` - Plan formativo completo
+- `ESTRUCTURA_MODULAR.md` - Arquitectura del proyecto
+- `CHANGELOG_TEXTO_RESPONSIVE.md` - Documentación de fixes
+
+---
+
+## ⚠️ REGLAS DE PROTECCIÓN
+
+### 🔴 PROHIBIDO:
+1. **Eliminar cualquier archivo de esta lista sin consentimiento explícito**
+2. **Hacer commits masivos que mezclen eliminación + creación**
+3. **Refactorizar sin backup previo de componentes críticos**
+
+### ✅ PERMITIDO CON PRECAUCIÓN:
+1. **Modificar contenido interno de archivos (con backup)**
+2. **Agregar nuevas funcionalidades**
+3. **Mejorar estilos y responsive design**
+
+### 📋 PROTOCOLO ANTES DE ELIMINAR:
+1. **Avisar explícitamente qué se va a eliminar**
+2. **Explicar por qué es necesario**
+3. **Ofrecer alternativas o migración**
+4. **Hacer backup en rama separada**
+5. **Obtener consentimiento explícito del usuario**
+
+---
+
+**Fecha de creación:** 28 de julio de 2025  
+**Última actualización:** 28 de julio de 2025  
+**Versión:** 1.0  
+**Estado:** ACTIVO - En vigor
