@@ -37,7 +37,7 @@ if ($DELETED_FILES) {
             Write-Host "1. Confirmar explícitamente con el usuario"
             Write-Host "2. Hacer backup del archivo"
             Write-Host "3. Documentar por qué es necesario eliminarlo"
-            Write-Host "4. Usar: git commit --no-verify (solo con autorización)"
+            Write-Host "4. Usar: git commit --no-verify (SOLO con autorización)"
             Write-Host ""
             exit 1
         }
