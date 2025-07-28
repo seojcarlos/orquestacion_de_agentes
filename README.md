@@ -1,12 +1,86 @@
-# 🧠 Orquestación de Agentes IA - Plataforma de Auto-Formación Personal
+# 🧠 Orquestación de Agentes IA
+
+> Plataforma personal de auto-formación para crear tu agencia digital con IA en 48 semanas
 
 [![GitHub license](https://img.shields.io/github/license/seojcarlos/orquestacion_de_agentes)](https://github.com/seojcarlos/orquestacion_de_agentes/blob/master/LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-green)](https://nodejs.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-14.1.0-black)](https://nextjs.org/)
 
-> **🎯 Objetivo**: Plataforma personal de auto-formación para crear tu propia agencia digital con IA en 48 semanas (52 con vacaciones)
+## 🚀 Inicio Rápido
 
-**Plataforma de uso personal** para dominar el desarrollo de agentes IA, desde conceptos básicos hasta sistemas de producción complejos con Claude Flow.
+```bash
+# Clonar e instalar
+git clone https://github.com/seojcarlos/orquestacion_de_agentes.git
+cd orquestacion_de_agentes
+npm install
+
+# Iniciar desarrollo
+npm run dev                    # Solo frontend (puerto 3000)
+# O iniciar sistema completo
+start-system.bat              # Frontend + Backend (puertos 3000 y 3001)
+```
+
+## 🏗️ Arquitectura
+
+**Sistema Dual Frontend + Backend:**
+- **Frontend**: Next.js + React (puerto 3000) - Interfaz educativa
+- **Backend**: Node.js + Express (puerto 3001) - Sistema de agentes IA  
+- **Comunicación**: REST APIs + WebSocket en tiempo real
+
+```
+Frontend (3000) ←→ Backend (3001) ←→ Agentes IA
+```
+
+## 📚 Documentación Organizada
+
+Toda la documentación está ahora **perfectamente organizada** en `docs/`:
+
+### **📊 01-project/** - Información del Proyecto
+- `architecture.md` - Arquitectura técnica completa
+- `current-status.md` - Estado actual y próximos pasos  
+- `roadmap-48-weeks.md` - Plan maestro de 48 semanas
+- `modular-structure.md` - Sistema modular implementado
+
+### **📖 02-guides/** - Guías de Uso
+- `claude-code-setup.md` - Configuración Claude Code optimizada
+- `debugging-browser.md` - Manual de debug en navegador
+- `content-creation.md` - Guía para crear contenido educativo
+- `ux-reorganization.md` - Mejoras UX implementadas
+
+### **📝 03-templates/** - Plantillas
+- `content-template.md` - Plantilla oficial para contenido
+- `page-example.tsx` - Ejemplo de página educativa avanzada
+
+### **🤖 04-prompts/** - Para Claude Code
+- `executable-prompt.md` - Prompt principal ejecutable  
+- `quick-commands.md` - Comandos copy/paste listos
+- `advanced-content.md` - Contenido educativo avanzado
+- `token-emergency.md` - Comandos de emergencia
+
+### **🚨 05-emergency/** - Protocolos de Emergencia
+- `file-recovery.md` - Recuperación de archivos eliminados
+- `code-protection.md` - Sistema de protección implementado
+- `auto-testing.md` - Testing automático con Claude Code
+
+### **📋 06-reference/** - Referencia Técnica
+- `mi-agencia-ia-structure.md` - **Documentación completa del backend**
+- `backend-api-endpoints.md` - **APIs y WebSocket endpoints**
+- `claude-code-summary.md` - Resumen ejecutivo Claude Code
+- `project-summary.md` - Resumen del proyecto completo
+
+## 🎯 Comenzar Ahora
+
+1. **Lee la guía rápida**: `GETTING_STARTED.md` (próximamente)
+2. **Inicia el sistema**: `start-system.bat`
+3. **Explora la plataforma**: `http://localhost:3000`
+4. **Ve el backend**: `http://localhost:3001/health`
+
+## 🔧 Para Claude Code
+
+**Contexto optimizado** - Claude Code ahora tiene acceso directo a:
+- **Prompts**: `docs/04-prompts/` - Todo listo para ejecutar
+- **Backend**: `docs/06-reference/mi-agencia-ia-structure.md` - Sistema completo
+- **APIs**: `docs/06-reference/backend-api-endpoints.md` - Endpoints documentados
 
 ## 🚀 Inicio Rápido
 
