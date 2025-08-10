@@ -1,16 +1,7 @@
 # 🚀 **COMANDOS RÁPIDOS - CLAUDE CODE**
 
 > **Para ejecutar cuando tengas tokens disponibles**  
-> **⚠️ IMPORTANTE: Usar división por partes para evitar límite de 32k tokens**
-
----
-
-## ⚠️ **PROBLEMA RESUELTO: LÍMITE DE TOKENS**
-
-**Error anterior**: `Claude's response exceeded the 32000 output token maximum`
-
-**Causa**: Pedías contenido universitario completo (3000+ palabras) de una vez  
-**Solución**: **División en 4 partes** por día (ver `docs/04-prompts/commands-by-parts.md`)
+> **Copiar y pegar directamente en terminal**
 
 ---
 
@@ -25,28 +16,17 @@ echo $env:CLAUDE_CODE_CONTINUE_ON_ERROR    # Debe mostrar: true
 
 **Si no aparece 30000**, ejecutar:
 ```powershell
-setx CLAUDE_CODE_MAX_OUTPUT_TOKENS "15000"    # REDUCIDO para evitar error
+setx CLAUDE_CODE_MAX_OUTPUT_TOKENS "30000"
 setx CLAUDE_CODE_AUTO_CONTINUE "true"  
 setx CLAUDE_CODE_CONTINUE_ON_ERROR "true"
 ```
 
----
-
-## 📋 **COMANDOS DIVIDIDOS POR PARTES (RECOMENDADO)**
-
-### **⭐ USAR ESTOS COMANDOS (Evitan error de tokens):**
-
-**Ver comandos completos en**: `docs/04-prompts/commands-by-parts.md`
-
-**Resumen del flujo**:
-1. **Parte 1/4**: Estructura base (≤4k tokens)
-2. **Parte 2/4**: Teoría completa (≤8k tokens)  
-3. **Parte 3/4**: Ejemplos interactivos (≤8k tokens)
-4. **Parte 4/4**: Práctica + Evaluación (≤8k tokens)
+⚠️ **NOTA IMPORTANTE**: El error que tuviste fue porque intentamos generar >32k tokens de una vez. 
+**SOLUCIÓN**: Ahora cada comando genera máximo 15k tokens. ✅
 
 ---
 
-## 📋 **COMANDOS ORIGINALES (Solo para referencia)**
+## 📋 **COMANDOS PARA CADA DÍA**
 
 ### **🎯 F1-M1-S1-D1 - PARTE 1: Estructura Base (4k tokens)**
 ```bash

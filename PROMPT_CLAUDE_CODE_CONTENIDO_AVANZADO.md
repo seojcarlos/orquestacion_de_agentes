@@ -276,63 +276,49 @@ Un schema para agentes IA debe considerar:
 
 ## 🚀 PROMPT ESPECÍFICO PARA CLAUDE CODE
 
-### **⚠️ IMPORTANTE: LÍMITES DE TOKENS**
-
-**Claude Code tiene límite de 32,000 tokens de salida. Para contenido universitario de 3000+ palabras, SIEMPRE dividir en partes:**
-
-1. **PARTE 1**: Estructura + Header + Navegación (≤4000 tokens)
-2. **PARTE 2**: Teoría Expandida completa (≤18000 tokens) 
-3. **PARTE 3**: Ejemplos + Componentes Interactivos (≤18000 tokens)
-4. **PARTE 4**: Práctica + Evaluación IA (≤28000 tokens)
-
----
-
 ### **INSTRUCCIONES PARA CLAUDE CODE:**
 
 ```markdown
-🔥 CREAR CONTENIDO EN PARTES - NO TODO JUNTO
-
 TAREA: Crear contenido educativo avanzado para [TASK_ID]
-PARTE: [1|2|3|4] de 4 partes
-
-⚠️ LÍMITE CRÍTICO: Máximo 28000 tokens por parte
-⚠️ SI EXCEDES 32k tokens: La respuesta se cortará
 
 NIVEL DE DETALLE: UNIVERSITARIO/PROFESIONAL
-- Total objetivo: 3000+ palabras (dividido en 4 partes)
+- Mínimo 3000 palabras por tarea
 - Teoría profunda con fundamentos
 - 4+ ejemplos progresivos (básico → producción)
 - Componentes interactivos funcionales
 - Evaluación IA integrada
 
-ESTRUCTURA POR PARTES:
+ESTRUCTURA OBLIGATORIA:
 
-📋 PARTE 1 - BASE (≤4000 tokens):
-   - Imports y configuración
-   - TaskHeader con progreso dinámico
-   - Breadcrumbs navegación
-   - Estructura de componentes (vacía)
-   - Layout responsivo básico
-
-📚 PARTE 2 - TEORÍA (≤8000 tokens):
-   - Fundamentos teóricos completos (1200-1500 palabras)
-   - Historia y evolución detallada
-   - Casos de uso en producción reales
-   - Principios de diseño profundos
+1. TEORÍA EXPANDIDA (1200-1500 palabras):
+   - Fundamentos teóricos desde cero
+   - Historia y evolución
+   - Casos de uso en producción
+   - Principios de diseño
    - Comparaciones con alternativas
 
-🔬 PARTE 3 - EJEMPLOS (≤8000 tokens):
-   - 4 ejemplos progresivos completos
-   - Componentes interactivos funcionales
-   - Simuladores y demos visuales
-   - Métricas en tiempo real
-   - CodeEditor con validación
+2. EJEMPLOS MÚLTIPLES (800-1000 palabras):
+   - Básico: Comprensión conceptual
+   - Intermedio: Aplicación práctica  
+   - Avanzado: Optimización y performance
+   - Producción: Casos reales de la industria
 
-🎯 PARTE 4 - PRÁCTICA (≤8000 tokens):
-   - Ejercicios guiados paso a paso
+3. COMPONENTES INTERACTIVOS:
+   - Simulador principal del concepto
+   - Editor de código con validación
+   - Demos visuales interactivos
+   - Métricas en tiempo real
+
+4. PRÁCTICA GUIADA (600-800 palabras):
+   - Pasos detallados con explicación
    - Checkpoints de validación
-   - Hints inteligentes integrados
-   - Sistema de evaluación IA completo
+   - Hints inteligentes
+   - Debugging asistido
+
+5. EVALUACIÓN IA:
+   - Quiz adaptativo
+   - Revisión de código automática
+   - Proyecto mini evaluado
    - Feedback personalizado
 
 TECNOLOGÍAS A USAR:
@@ -343,130 +329,22 @@ TECNOLOGÍAS A USAR:
 - Tailwind para styling avanzado
 
 FORMATO DE ARCHIVO:
-- Crear/actualizar: src/app/agencia/mes-1/semana-1/dia-[X]/page.tsx
+- Crear página completa en src/app/agencia/mes-1/semana-1/dia-[X]/page.tsx
 - Componentes en src/components/education/
 - Utils en src/lib/education/
+- Tests en tests/education/
 
 CRITERIOS DE CALIDAD:
-- Respetar límite de tokens por parte
-- Contenido 3x más detallado que Semana 1
+- Contenido 3x más detallado que Semana 1 actual
 - Interactividad en cada sección
 - Ejemplos funcionando al 100%
 - Performance optimizada
+- Accesibilidad completa
 ```
 
 ---
 
-## 🎯 COMANDOS ESPECÍFICOS POR PARTES
-
-### **COMANDO PARTE 1 - ESTRUCTURA BASE**
-
-```bash
-claude-code "CREAR ESTRUCTURA BASE F1-M1-S1-D2 PARTE 1/4
-
-TAREA: 'Estructura de directorios + Configuración Git'
-ARCHIVO: src/app/agencia/mes-1/semana-1/dia-2/page.tsx
-
-⚠️ LÍMITE: Máximo 4000 tokens - SOLO ESTRUCTURA
-
-CREAR SOLAMENTE:
-1. Imports necesarios (React, Next.js, componentes UI)
-2. TaskHeader dinámico con task info F1-M1-S1-D2
-3. Breadcrumbs navegación completa  
-4. Estructura de componentes principales (SIN contenido interno)
-5. Layout responsivo con Tailwind
-
-COMPONENTES A CREAR (estructura vacía):
-- TaskHeader con info 'Estructura directorios + Git'
-- TheorySection (solo wrapper, sin contenido)
-- ExamplesSection (solo wrapper, sin contenido)
-- PracticeSection (solo wrapper, sin contenido) 
-- EvaluationSection (solo wrapper, sin contenido)
-
-TECNOLOGÍAS: Next.js 14, React, TypeScript, Tailwind CSS
-NO INCLUIR: Contenido de teoría, ejemplos, o evaluación"
-```
-
-### **COMANDO PARTE 2 - TEORÍA COMPLETA**
-
-```bash
-claude-code "COMPLETAR TEORÍA F1-M1-S1-D2 PARTE 2/4
-
-ARCHIVO: src/app/agencia/mes-1/semana-1/dia-2/page.tsx
-
-⚠️ LÍMITE: Máximo 8000 tokens - SOLO TEORÍA
-
-COMPLETAR TheorySection CON:
-1. Fundamentos de arquitecturas de directorios para IA (400 palabras)
-2. Evolución histórica: monolitos → microservicios → agentes (300 palabras)
-3. Git para sistemas de IA: branching strategies (300 palabras)
-4. Casos reales: OpenAI, Anthropic, Google (400 palabras)
-5. Principios de organización para agentes (300 palabras)
-
-TOTAL: ~1700 palabras de teoría universitaria
-INCLUIR: Diagramas, comparaciones, ejemplos conceptuales
-NO TOCAR: Otras secciones (Examples, Practice, Evaluation)"
-```
-
-### **COMANDO PARTE 3 - EJEMPLOS INTERACTIVOS**
-
-```bash
-claude-code "COMPLETAR EJEMPLOS F1-M1-S1-D2 PARTE 3/4
-
-ARCHIVO: src/app/agencia/mes-1/semana-1/dia-2/page.tsx
-
-⚠️ LÍMITE: Máximo 8000 tokens - SOLO EJEMPLOS
-
-COMPLETAR ExamplesSection CON:
-1. Ejemplo Básico: Estructura simple de agente
-2. Ejemplo Intermedio: Arquitectura modular con Git
-3. Ejemplo Avanzado: Microservicios para IA
-4. Ejemplo Producción: Sistema real multi-agente
-
-INCLUIR COMPONENTES INTERACTIVOS:
-- DirectoryVisualizer (árbol de archivos)
-- GitFlowSimulator (branches interactivos)
-- ArchitectureComparator (visualización)
-
-NO TOCAR: TheorySection, PracticeSection, EvaluationSection"
-```
-
-### **COMANDO PARTE 4 - PRÁCTICA Y EVALUACIÓN**
-
-```bash
-claude-code "COMPLETAR PRÁCTICA F1-M1-S1-D2 PARTE 4/4
-
-ARCHIVO: src/app/agencia/mes-1/semana-1/dia-2/page.tsx
-
-⚠️ LÍMITE: Máximo 8000 tokens - PRÁCTICA + EVALUACIÓN
-
-COMPLETAR PracticeSection + EvaluationSection:
-
-PRÁCTICA:
-- Ejercicio guiado: Crear estructura de agente paso a paso
-- Terminal interactivo para comandos Git
-- Validación en tiempo real de estructura
-- Hints contextuales
-
-EVALUACIÓN IA:
-- Quiz adaptativo sobre arquitecturas
-- Evaluación de estructura creada
-- Proyecto mini: Organizar agente existente
-- Feedback personalizado y next steps
-
-NO TOCAR: TheorySection, ExamplesSection"
-```
-
----
-
-## ✅ **FLUJO RECOMENDADO PARA D2:**
-
-1. **Ejecutar PARTE 1** → Verificar que se crea estructura sin error
-2. **Ejecutar PARTE 2** → Verificar teoría completa sin exceder tokens  
-3. **Ejecutar PARTE 3** → Verificar ejemplos interactivos funcionando
-4. **Ejecutar PARTE 4** → Completar práctica y evaluación
-
-**¡Cada parte debe ejecutarse por separado para evitar el error de 32k tokens!** 🚀
+## 🎯 MEJORAS PROPUESTAS AL SISTEMA ACTUAL
 
 ### **1. Arquitectura de Contenido Educativo**
 
